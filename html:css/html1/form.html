@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="keyword" content="HTML 선탹 과제">
+    <title>설문조사 양식</title>
+</head>
+<body>
+    <header>
+        <h1>설문조사 양식</h1>
+        <p>모든 항목에 빠짐없이 체크하세요.</p>
+        <h2>설문 내용</h2>
+        <ol>
+            <li>연령대</li>
+            <li>이름</li>
+            <li>거주지</li>
+        </ol>
+    </header>
+    <hr>
+    <main>
+        <form>
+            <fieldset>
+                <legend>개인 정보</legend>
+                <br>
+                <div>
+                    <label for="name">이름</label>
+                    <input type="text"
+                    name="name"
+                    id="name" placeholder="이름을 기입하세요.">
+                </div>
+                <br>
+                <div>
+                    <label for="email">이메일</label>
+                    <input type="email"
+                    name="email"
+                    id="email" placeholder="이메일 주소를 기입하세요">
+                </div>
+                <div>
+                    <p>거주 지역</p>
+                    <select>
+                        <option value="metropolitan area">수도권</option>
+                        <option value="gangwon area">강원권</option>
+                        <option value="chungcheong area">충청권</option>
+                        <option value="jeolla area">전라권</option>
+                        <option value="gyeongsang area">경상권</option>
+                        <option value="jeju area">제주권</option>
+                    </select>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>설문</legend>
+                <p>설문 대상의 해당 연령대</p>
+                <span>
+                    <input type="radio"id="teen" name="age">
+                    <label for="teen">10대</label>
+                </span>
+                <span>
+                    <input type="radio"id="twenty" name="age">
+                    <label for="twenty">20대</label>
+                </span>
+                <span>
+                    <input type="radio"id="thirty" name="age">
+                    <label for="thitry">30대</label>
+                </span>
+                <span>
+                    <input type="radio"id="forty" name="age">
+                    <label for="forty">40대</label>
+                </span>
+                <span>
+                    <input type="radio"id="fifty" name="age">
+                    <label for="fifty">50대</label>
+                </span>
+                <span>
+                    <input type="radio"id="other" name="age">
+                    <label for="other">그 외</label>
+                </span>
+
+                <p>거주지 선택 시 고려사항은 무엇인가요? (다중 선택 가능)</p>
+                <input type="checkbox" id="traffic" name="residence">
+                <label for="traffic">교통</label>
+                <input type="checkbox" id="public facilities" name="residence">
+                <label for="public facilities">공공시설</label>
+                <input type="checkbox" id="condition" name="residence">
+                <label for="condition">집의 상태</label>
+                <input type="checkbox" id="environment" name="residence">
+                <label for="environment">주변 환경</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>현재 거주 환경 만족도</legend>
+                <p>아래 항목에 대해 만족도를 선택하세요. (1: 매우 불만족 ~ 5: 매우 만족)</p>
+                <table border="1" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>1점</th>
+                            <th>2점</th>
+                            <th>3점</th>
+                            <th>4점</th>
+                            <th>5점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>교통 편의성</td>
+                            <td><input type="radio" name="traffic_score" value="1"></td>
+                            <td><input type="radio" name="traffic_score" value="2"></td>
+                            <td><input type="radio" name="traffic_score" value="3"></td>
+                            <td><input type="radio" name="traffic_score" value="4"></td>
+                            <td><input type="radio" name="traffic_score" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>공공시설 접근성</td>
+                            <td><input type="radio" name="facility_score" value="1"></td>
+                            <td><input type="radio" name="facility_score" value="2"></td>
+                            <td><input type="radio" name="facility_score" value="3"></td>
+                            <td><input type="radio" name="facility_score" value="4"></td>
+                            <td><input type="radio" name="facility_score" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>집의 상태</td>
+                            <td><input type="radio" name="condition_score" value="1"></td>
+                            <td><input type="radio" name="condition_score" value="2"></td>
+                            <td><input type="radio" name="condition_score" value="3"></td>
+                            <td><input type="radio" name="condition_score" value="4"></td>
+                            <td><input type="radio" name="condition_score" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>주변 환경</td>
+                            <td><input type="radio" name="environment_score" value="1"></td>
+                            <td><input type="radio" name="environment_score" value="2"></td>
+                            <td><input type="radio" name="environment_score" value="3"></td>
+                            <td><input type="radio" name="environment_score" value="4"></td>
+                            <td><input type="radio" name="environment_score" value="5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>기타 의견</legend>
+                <textarea rows="3" cols="30" name="comment"></textarea>
+            </fieldset>
+            <input type="submit">
+        </form>
+    </main>
+    <hr>
+    <footer>
+        <a href="image/a.jpg" title="그냥 넣어본 고양이 사진" target="_blank">인터넷에서 저장한 사진</a>
+        <p>응답해주셔서 감사합니다.</p>
+    </footer>
+</body>
+</html>
