@@ -1,0 +1,146 @@
+/* --- 기본 Body 및 제목 스타일 (gugu/, gugu/n 페이지 공통) --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    /* body의 특정 display 속성은 아래 컨테이너 클래스에서 처리 */
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    display: block; /* 중앙 정렬을 위해 전체 너비를 차지하도록 */
+    width: fit-content; /* 내용에 맞춰 너비 조정 후 중앙 정렬 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 단일 구구단 테이블 스타일 (gugu.html에서 사용) --- */
+.gugudan-table { /* gugu.html에서 사용하는 클래스 이름 */
+    background-color: #eaf4fb;
+    border: 1px solid #cce7fa;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* 단일 테이블의 최대 너비 제한 */
+    box-sizing: border-box; /* 패딩이 너비 계산에 포함되도록 */
+
+    /* gugu.html의 body 레이아웃을 위한 특정 display 속성 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 50px); /* 뷰포트 높이에서 마진을 뺀 만큼의 최소 높이 */
+    margin: 25px auto; /* 테이블을 수평으로 중앙 정렬 */
+}
+
+/* --- 전체 구구단 그리드 컨테이너 스타일 (gugu_full.html에서 사용) --- */
+.container { /* gugu_full.html에서 사용하는 클래스 이름 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* 그리드 컨테이너를 중앙 정렬하고 하단 여백 추가 */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 그리드 내 각 구구단 단 카드 스타일 (gugu_full.html에서 사용) --- */
+.gugudan-dan { /* gugu_full.html에서 각 단 카드에 사용하는 클래스 이름 */
+    background-color: #eaf4fb;
+    border: 1px solid #cce7fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex; /* 카드 내 콘텐츠 중앙 정렬을 위해 */
+    flex-direction: column;
+    align-items: center;
+}
+.gugudan-dan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 단 제목 스타일 (두 페이지 공통) --- */
+/* .gugudan-table과 .gugudan-dan 모두 내부에 'dan-header' 스타일을 가진 요소를 가질 수 있음 */
+.dan-header { /* 각 카드/테이블 내 헤더 스타일 */
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #aed6f1;
+    width: 100%; /* 부모 너비에 맞춤 */
+}
+
+/* --- 결과 줄 스타일 (두 페이지 공통, but 적용 방식 다름) --- */
+/* .gugudan-table 안의 p 태그 (gugu.html용) */
+.gugudan-table p { 
+    padding: 10px 0;
+    font-size: 1.2em;
+    color: #555;
+    border-bottom: 1px dotted #e0e0e0;
+    margin: 0;
+    text-align: center;
+    width: 100%; /* 단락이 전체 너비를 차지하도록 */
+}
+.gugudan-table p:last-child {
+    border-bottom: none;
+}
+
+/* .gugudan-dan 안의 p 태그 (gugu_full.html용) */
+.gugudan-dan p {
+    padding: 8px 0;
+    font-size: 1.1em;
+    color: #555;
+    border-bottom: 1px dotted #e0e0e0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.gugudan-dan p:last-child {
+    border-bottom: none;
+}
+
+
+/* --- 반응형 조정 (미디어 쿼리) --- */
+@media (max-width: 600px) {
+    body {
+        margin: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    
+    /* gugu.html 조정 */
+    .gugudan-table {
+        padding: 20px 25px;
+    }
+    .gugudan-table p {
+        font-size: 1.1em;
+    }
+
+    /* gugu_full.html 조정 */
+    .container {
+        grid-template-columns: 1fr; /* 작은 화면에서는 한 줄에 하나씩 */
+        padding: 15px;
+        gap: 20px;
+    }
+    .gugudan-dan {
+        padding: 15px;
+    }
+    .gugudan-dan p {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 전체</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gugudan.css' %}"> {# 통합 CSS 파일 로드 #}
+</head>
+<body>
+    <h1>🌟 구구단 전체 🌟</h1>
+
+    <div class="container">
+        {% for dan in all_gugu %}
+            <div class="gugudan-dan"> 
+                <div class="dan-header">{{ dan.dan }}단</div>
+                {% for result in dan.results %}
+                    <p>{{ result }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

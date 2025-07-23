@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ dan }}단 구구단</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gugudan.css' %}"> {# 통합 CSS 파일 로드 #}
+</head>
+<body>
+    <h1>{{ dan }}단</h1>
+
+    <div class="gugudan-table">
+        {% for i in range %}
+            <p>{{ dan }} x {{ i }} = {% widthratio dan 1 i %}</p>
+        {% comment %} 
+        {% for i, result in results %}
+            <p>{{ dan }} x {{ i }} = {{ result }}</p> 
+        {% endcomment %}
+        {% endfor %}
+    </div>
+</body>
+</html>
